@@ -1,6 +1,5 @@
 # Changelog
-
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+Todas as alterações significativas neste projeto serão documentadas neste arquivo. Consulte a [standard-version](https://github.com/conventional-changelog/standard-version) para obter as diretrizes de commit.
 
 ### 0.1.1 (2025-06-22)
 
