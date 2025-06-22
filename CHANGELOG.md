@@ -1,5 +1,13 @@
 # Changelog
-Todas as alterações significativas neste projeto serão documentadas neste arquivo. Consulte a [standard-version](https://github.com/conventional-changelog/standard-version) para obter as diretrizes de commit.
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### [0.1.2](https://github.com/Gianine12/encurtador-url/compare/v0.1.1...v0.1.2) (2025-06-22)
+
+
+### Features
+
+* **empresa,usuario,url:** Inclusao do swagger para documentar os endpoints ([e2d232a](https://github.com/Gianine12/encurtador-url/commit/e2d232af379efee2e3aea9c86d26d2367ed0e894))
 
 ### 0.1.1 (2025-06-22)
 
