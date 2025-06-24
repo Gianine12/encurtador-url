@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](https://github.com/Gianine12/encurtador-url/compare/v0.1.2...v0.1.3) (2025-06-24)
+
+
+### Features
+
+* **empresa,usuario,url:** Criacao e configuracao do banco de dados ([0829e54](https://github.com/Gianine12/encurtador-url/commit/0829e54dfc55f4c144420ee4fded7435d5171e17))
+
 ### [0.1.2](https://github.com/Gianine12/encurtador-url/compare/v0.1.1...v0.1.2) (2025-06-22)
 
 
