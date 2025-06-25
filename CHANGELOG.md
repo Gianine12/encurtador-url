@@ -4,6 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.1.4](https://github.com/Gianine12/encurtador-url/compare/v0.1.3...v0.1.4) (2025-06-25)
 
+### Refactor
+* **empresa,usuario,url:** Migracao do database para acessar o postgres envez de pg para TypeOrm
+
 ### [0.1.3](https://github.com/Gianine12/encurtador-url/compare/v0.1.2...v0.1.3) (2025-06-24)
 
 
