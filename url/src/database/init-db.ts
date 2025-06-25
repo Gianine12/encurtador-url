@@ -1,6 +1,6 @@
 import { Client } from 'pg';
 
-const dbName = 'encurtador-url-url'
+const dbName = 'encurtador-url-url';
 
 const config = {
   user: 'postgres',
@@ -10,26 +10,26 @@ const config = {
   database: 'postgres',
 };
 
-
-
-async function dataBaseExists(){
-  const client = new Client(config)
+async function createDatabaseIfNotExists() {
+  const client = new Client(config);
 
   try {
     await client.connect();
+
     const res = await client.query(`SELECT 1 FROM pg_database WHERE datname='${dbName}'`);
-    
+
     if (res.rowCount === 0) {
       await client.query(`CREATE DATABASE "${dbName}"`);
+      console.log(`Banco de dados '${dbName}' criado com sucesso.`);
     } else {
-      console.log(`Banco de dados ${dbName} já existe.`);
+      console.log(`Banco de dados '${dbName}' já existe.`);
     }
-    } catch (err) {
-    console.error('Erro ao verificar/criar banco:', err);
+  } catch (error) {
+    console.error('Erro ao criar banco de dados:', error);
     process.exit(1);
   } finally {
     await client.end();
   }
 }
 
-dataBaseExists();
+createDatabaseIfNotExists();

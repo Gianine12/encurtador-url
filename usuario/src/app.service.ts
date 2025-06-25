@@ -1,15 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import { DatabaseService } from './database/database.service';
+import { CreateUserDto, SoftDeleteUserDto, UpdateUserDto } from './dto/user.dto';
 
 @Injectable()
 export class AppService {
-  constructor(private readonly db: DatabaseService) {}
+  async getAll(){}
 
-  getUserById(id:number){
-    return this.db.findUserById(id);
-  }
+  async create(newUser: CreateUserDto){}
 
-  cadastro(): string{
-    return 'Cadastro'
-  }
+  async softDelete(user: SoftDeleteUserDto){}
+
+  async update(user: UpdateUserDto){}
 }
