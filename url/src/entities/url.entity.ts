@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsNotEmpty, IsString } from "class-validator";
 import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('urls')
@@ -11,16 +11,14 @@ export class Url{
   @IsNotEmpty()
   link: string
 
-  @Column({name: 'id_user'})
+  @Column({ name: 'id_user', nullable: true })
   idUser: number
 
-  @Column()
-  @IsNumber()
+  @Column({default: 0})
   clicks: number
 
-  @Column({name: "ulr_encurtada"})
-  @IsString()
-  ulrEncurtada: string
+  @Column({ name: 'url_encurtada', nullable: true })
+  urlEncurtada: string;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

@@ -1,7 +1,5 @@
-version: "3.8"
-
 services:
-  postgres:
+  db:
     image: postgres:15
     restart: always
     container_name: encurtador-postgres
@@ -10,8 +8,10 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: encurtador
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - encurtador_net
 
@@ -21,14 +21,11 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - postgres
+      - db
     networks:
       - encurtador_net
-    environment:
-      DB_NAME: encurtador-url-usuario
-      DB_USER: postgres
-      DB_PASSWORD: 1234
-      DB_HOST: postgres
+    env_file:
+      - ./usuario/.env
 
   empresa:
     build: ./empresa
@@ -36,14 +33,11 @@ services:
     ports:
       - "3002:3002"
     depends_on:
-      - postgres
+      - db
     networks:
       - encurtador_net
-    environment:
-      DB_NAME: encurtador-url-empresa
-      DB_USER: postgres
-      DB_PASSWORD: 1234
-      DB_HOST: postgres
+    env_file:
+      - ./empresa/.env
 
   url:
     build: ./url
@@ -51,14 +45,11 @@ services:
     ports:
       - "3001:3001"
     depends_on:
-      - postgres
+      - db
     networks:
       - encurtador_net
-    environment:
-      DB_NAME: encurtador-url-url
-      DB_USER: postgres
-      DB_PASSWORD: 1234
-      DB_HOST: postgres
+    env_file:
+      - ./url/.env
 
 volumes:
   pgdata:

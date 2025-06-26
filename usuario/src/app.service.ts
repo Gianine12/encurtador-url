@@ -38,7 +38,10 @@ export class AppService {
   }
 
   async softDelete(id: number): Promise<void>{
-    await this.findOne(id);
+    const user = await this.findOne(id);
+    if (!user) {
+      throw new NotFoundException(`Usuario com ID ${id} não encontrada`);
+    }
     await this.userRepo.softDelete(id);
   }
 

@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config(); 
+
 import { Client } from 'pg';
 
 const dbName = process.env.DB_NAME;

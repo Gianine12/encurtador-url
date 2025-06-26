@@ -9,6 +9,7 @@ import {
   Post,
   UseGuards,
 } from '@nestjs/common';
+import { ApiBody, ApiOperation } from '@nestjs/swagger';
 import { AppService } from './app.service';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import { CreateCompanyDto, UpdateCompanyDto } from './dto/empresa.dto';
@@ -18,6 +19,8 @@ export class AppController {
   constructor(private readonly empresaService: AppService) {}
 
   @Post()
+  @ApiOperation({summary: 'Criacao de uma emprea'})
+  @ApiBody({type: CreateCompanyDto})
   create(@Body() dto: CreateCompanyDto) {
     return this.empresaService.create(dto);
   }
@@ -29,6 +32,8 @@ export class AppController {
   }
 
   @UseGuards(JwtAuthGuard)
+  @ApiOperation({summary: 'Atualizacao dos dados cadastrais de uma empresa'})
+  @ApiBody({type: UpdateCompanyDto})
   @Patch(':id')
   update(
     @Param('id', ParseIntPipe) id: number,

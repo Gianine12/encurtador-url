@@ -6,6 +6,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
+
 RUN npm run build
 
 FROM node:20-alpine
@@ -16,5 +17,9 @@ COPY package*.json ./
 RUN npm install --only=production
 
 COPY --from=builder /app/dist ./dist
+RUN apk add --no-cache postgresql-client
+COPY wait-for-db.sh /app/wait-for-db.sh
+RUN chmod +x /app/wait-for-db.sh
 
-CMD ["node", "dist/main"]
+CMD ["/app/wait-for-db.sh", "node", "dist/main"]
+
