@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/Gianine12/encurtador-url/compare/v0.1.7...v0.1.8) (2025-06-26)
+
+
+### Bug Fixes
+
+* **empresa,usuario,url:** Correcao do swagger, Correcao no sistema de autenticacao, Docker ([c5c712a](https://github.com/Gianine12/encurtador-url/commit/c5c712a95e7b7a9f56706292d4726894ba04c909))
+
 ### [0.1.7](https://github.com/Gianine12/encurtador-url/compare/v0.1.6...v0.1.7) (2025-06-26)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "encurtador-url",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "devDependencies": {
     "standard-version": "^9.5.0"
   },
