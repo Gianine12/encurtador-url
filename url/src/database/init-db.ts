@@ -1,11 +1,11 @@
 import { Client } from 'pg';
 
-const dbName = 'encurtador-url-url';
+const dbName = process.env.DB_NAME;
 
 const config = {
-  user: 'postgres',
-  host: 'localhost',
-  password: '1234',
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  password: process.env.DB_PASSWORD,
   port: 5432,
   database: 'postgres',
 };

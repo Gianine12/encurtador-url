@@ -11,6 +11,10 @@ export class CreateCompanyDto{
   @IsNotEmpty()
   @IsString()
   senha:string;
+
+  @IsNotEmpty()
+  @IsString()
+  cnpj:string
 }
 
 
@@ -27,6 +31,10 @@ export class UpdateCompanyDto{
   @IsString()
   @MinLength(6)
   senha?:string;
+
+  @IsOptional()
+  @IsString()
+  cnpj:string
 }
 
 export class SoftDeleteCompanyDto{

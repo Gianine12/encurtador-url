@@ -6,6 +6,12 @@ export class CreateUrlDto {
 
   @IsNumber()
   idUser: number;
+
+  @IsUrl()
+  ulrEncurtada: string
+
+  @IsNumber()
+  clicks: number
 }
 
 export class UpdateUrlDto{
@@ -16,6 +22,14 @@ export class UpdateUrlDto{
   @IsOptional()
   @IsNumber()
   idUser?: number;
+
+  @IsOptional()
+  @IsUrl()
+  ulrEncurtada?: string
+
+  @IsOptional()
+  @IsNumber()
+  clicks?: number
 }
 
 export class SoftDeleteUrlDto{
