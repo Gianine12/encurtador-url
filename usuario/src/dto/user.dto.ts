@@ -23,10 +23,25 @@ export class UpdateUserDto{
   @MinLength(6)
   senha?: string
 
+  @IsEmail()
+  @IsOptional()
+  email:string
 }
 
 export class SoftDeleteUserDto{
   @IsInt()
   @IsPositive()
   id: number;
+}
+
+export class LoginDto {
+  @IsEmail()
+  email: string;
+
+  @IsString()
+  senha: string;
+}
+
+export class AuthResponseDto {
+  accessToken: string;
 }

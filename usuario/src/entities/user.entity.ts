@@ -1,5 +1,6 @@
-import { IsEmail, IsNotEmpty, IsString, MinLength } from "class-validator";
-import { Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import * as bcrypt from 'bcrypt';
+import { IsEmail, IsNotEmpty, IsString } from "class-validator";
+import { BeforeInsert, BeforeUpdate, Column, CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
 
 @Entity('users')
 export class User{
@@ -16,9 +17,15 @@ export class User{
   email: string
 
   @Column()
-  @IsString()
-  @MinLength(6, { message: 'A senha deve ter pelo menos 6 caracteres' })
   senha:string
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  async hashPassword() {
+    if (this.senha) {
+      this.senha = await bcrypt.hash(this.senha, 10);
+    }
+  }
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;

@@ -1,6 +1,6 @@
 import { DataSource } from 'typeorm';
 import { Url } from './entities/url.entity';
-
+// passar as informacoes criticas para um .env
 export const AppDataSource = new DataSource({
   type: 'postgres',
   host: 'localhost',
