@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.6](https://github.com/Gianine12/encurtador-url/compare/v0.1.5...v0.1.6) (2025-06-26)
+
+
+### Features
+
+* **usuario:** Implementado modulo de autenticacao e construcao do controller e service do usuario ([09b5230](https://github.com/Gianine12/encurtador-url/commit/09b52304eafcf88e386d936ed4dda75280ec7d36))
+
 ### [0.1.5](https://github.com/Gianine12/encurtador-url/compare/v0.1.4...v0.1.5) (2025-06-26)
 
 ### Features
