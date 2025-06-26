@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.7](https://github.com/Gianine12/encurtador-url/compare/v0.1.6...v0.1.7) (2025-06-26)
+
+
+### Features
+
+* **empresa,usuario,url:** inclusao do docker e validacao das rotas, junto com sistema de auth ([a668ed3](https://github.com/Gianine12/encurtador-url/commit/a668ed31ce0662df0cfaeb9caecd67f4395dba65))
+
 ### [0.1.6](https://github.com/Gianine12/encurtador-url/compare/v0.1.5...v0.1.6) (2025-06-26)
 
 
